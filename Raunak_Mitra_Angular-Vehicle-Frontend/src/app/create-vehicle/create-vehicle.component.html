@@ -1,0 +1,55 @@
+<div class="col-md-6 offset-md-3">
+    <h3 style="color: #85054b; padding-right:  10px; font-size: 25px;">Register Vehicle</h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label style="color: rgb(5, 5, 133); font-weight: bold;">Regstration Number</label>
+            <input type="text" class="form-control" id="regNo" [(ngModel)]="vehicle.regNo" name="regNo">
+        </div>
+
+
+        <div class="form-group">
+            <label style="color: rgb(5, 5, 133); font-weight: bold;">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="vehicle.name" name="name">
+        </div>
+
+
+        <div class="form-group">
+            <label style="color: rgb(5, 5, 133); font-weight: bold;">Type of Vehicle</label>
+            <div class="FormControl">
+                <label class="inline-radio" style="color: #9b4309; padding-right:  10px; font-weight: bold;">
+                    <input type="radio" name="type" value="2-Wheeler" [(ngModel)]="vehicle.type" ngModel
+                        required>  2-Wheeler
+                </label>
+                <label class="inline-radio" style="color: #9b4309; padding-left:  10px; font-weight: bold;">
+                    <input type="radio" name="type" value="4-Wheeler" [(ngModel)]="vehicle.type" ngModel
+                        required>  4-Wheeler
+                </label>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label style="color: rgb(5, 5, 133); font-weight: bold;">State -></label>
+            <select style="color: #85054b; padding-right:  10px;" class="form-select" id="state" [(ngModel)]="vehicle.state" [(ngModel)]="selectedState" name="state"
+                (change)="setCity()">
+                <option *ngFor="let n of state">{{n}}</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label style="color: rgb(5, 5, 133); font-weight: bold;">City -></label>
+            <select style="color: #85054b; padding-right:  10px;" class="form-select" id="city" [(ngModel)]="newCity" name="city" required>
+                <option style="color: red;">{{newCity}}</option>
+                <option *ngFor="let n of city">{{n}}</option>
+            </select>
+        </div>
+
+
+
+        <button class="btn btn-success" type="submit">Submit</button>
+
+    </form>
+</div>

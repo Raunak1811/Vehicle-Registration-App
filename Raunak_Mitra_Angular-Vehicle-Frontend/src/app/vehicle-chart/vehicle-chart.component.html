@@ -1,0 +1,25 @@
+<h2 style="color: #85054b; padding-right:  10px; font-size: 25px;"> Vehicle Chart</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="color: rgb(5, 5, 133);">Regstration Number</th>
+            <th style="color: rgb(5, 5, 133);">Name</th>
+            <th style="color: rgb(5, 5, 133);">Type of Vehicle</th>
+            <th style="color: rgb(5, 5, 133);">State</th>
+            <th style="color: rgb(5, 5, 133);">City</th>
+            <th style="color: rgb(5, 5, 133);">Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let vehicle of vehicles">
+            <td>{{vehicle.regNo}}</td>
+            <td>{{vehicle.name}}</td>
+            <td>{{vehicle.type}}</td>
+            <td>{{vehicle.state}}</td>
+            <td>{{vehicle.city}}</td>
+                <button (click) = "updateVehicle(vehicle.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteVehicle(vehicle.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "vehicleDetails(vehicle.id)" class = "btn btn-info" style="margin-left: 10px" > Show</button>
+        </tr>
+    </tbody>
+</table>
